@@ -146,24 +146,9 @@ var trace4 = {
 };
 
 
-var trace5 = {
-    x: xCenters, y: yCenters, z: zCenters,
-	mode: 'markers',
-    name: 'Cluster Centers',
-	marker: {
-		size: 6,
-		symbol: 'circle',
-		line: {
-		color: 'rgb(192,84,255,1)',
-		width: 1},
-		opacity: 0.8},
-	type: 'scatter3d'
-};
-
-
 //All the traces are added to an array called data, which is graphed using Plotly.newPlot();
 
-var data = [trace1,trace2,trace3,trace4,trace5];
+var data = [trace1,trace2,trace3,trace4];
 var layout = {margin: {
 	l: 0,
 	r: 0,
