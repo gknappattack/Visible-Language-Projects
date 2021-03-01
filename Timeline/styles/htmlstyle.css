@@ -1,0 +1,112 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    top: 80px;
+    position: relative;
+  }
+  
+  .main,
+  .sidebar {
+    background-color: #dac292;
+  }
+  
+  .main {
+    width: 85%;
+    height: 100%;
+    overflow-x: scroll;
+    position: relative;
+    border: black solid 1pt;
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .sidebar {
+    width: 15%;
+    height: 810px;
+    margin-left: 15px;
+    position: relative;
+    overflow: scroll;
+    border: black solid 1pt;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    background-color: #7e4a35;
+    font-family: sans-serif;
+    padding: 10px;
+  }
+
+  .timeline {
+    max-height: auto;
+    max-width: auto;
+    display: flex;
+    left: 40px;
+    position: absolute;
+    top: 300px;
+}
+
+.timeline .item{
+    width: 110px;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.timeline-imgs .item img{
+    object-fit: cover;
+}
+
+svg path {
+    fill-opacity: 0;
+    animation: draw 5s 1 forwards;
+    pointer-events:visibleStroke;
+    z-index: 9;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  svg path:hover {
+    fill:red;
+    stroke:red;
+  }
+
+svg{
+    background-color: #dac292;
+    
+}
+
+.selectImg {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: black solid 3px;
+}
+
+.sidebar p {
+    text-align: center;
+    font-size: 18pt;
+}
+span {
+    font-size: 12pt;
+    text-align: center;
+} 
+
+.title {
+  position: relative;
+  width: 84%;
+  margin-right: 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24pt;
+}

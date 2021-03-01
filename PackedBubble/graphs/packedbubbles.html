@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link type="text/css" rel="stylesheet" href="../styles/layout.css">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <title>Book of Mormon Text Bubble Charts</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="../scripts/draw_graphs.js"></script>
+        <script type="text/javascript" src="../scripts/index.js"></script>
+
+        <div class="container">
+            <div class="header">
+                <h1>Speakers of the Book of Mormon: Words by Frequency</h1>
+            </div>
+            <div class="graph", id="graph-container">
+                <div id="graph-display">
+                    <p style="text-align: center; font-size: 22pt;">
+                    Select a chart type to begin</p>
+                </div>
+                <div class="circle" id="circle">
+                    <span class="content"id="text"></span>
+                  </div>
+                  <button type="button" onclick="redrawGraph()" id="back-button">Return</button>
+            </div>
+            
+            <div class="sidebar">
+                <div class="list">
+                    <ul id="parent-list">
+                        <li id="nephi1">Nephi, son of Lehi</li>
+                        <li id="lehi">Lehi</li>
+                        <li id="Zeniff">Zeniff</li>
+                        <li id="Jacob">Jacob</li>
+                        <li id="Enos">Enos</li>
+                        <li id="Jarom">Jarom</li>
+                        <li id="Laman & Lemuel">Laman & Lemuel</li>
+                        <li id="King Benjamin">King Benjamin</li>
+                        <li id="Limhi">Limhi</li>
+                        <li id="Amaleki">Amaleki</li>
+                        <li id="Anti-Nephi-Lehis">Anti-Nephi-Lehi</li>
+                        <li id="Mosiah">Mosiah</li>
+                        <li id="Abinadi">Abinadi</li>
+                        <li id="Lamoni's Father">Lamoni's Father</li>
+                        <li id="Alma">Alma</li>
+                        <li id="Alma the Younger">Alma the Younger</li>
+                        <li id="Amulek">Amulek</li>
+                        <li id="Ammon">Ammon</li>
+                        <li id="Lamoni">Lamoni</li>
+                        <li id="Korihor">Korihor</li>
+                        <li id="Giddanhi">Giddanhi</li>
+                        <li id="Captain Moroni">Captain Moroni</li>
+                        <li id="Pahoran">Pahoran</li>
+                        <li id="Helaman">Helaman</li>
+                        <li id="Nephi, son of Helaman">Nephi, son of Helaman</li>
+                        <li id="Samuel">Samuel</li>
+                        <li id="Mormon">Mormon</li>
+                        <li id="Moroni, son of Mormon">Moroni, son of Mormon</li>
+                    </ul>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                // locate your element and add the Click Event Listener
+                document.getElementById("parent-list").addEventListener("click",function(e) {
+                    // e.target is our targetted element.
+                                // try doing console.log(e.target.nodeName), it will result LI
+                    if(e.target && e.target.nodeName == "LI") {
+                        console.log(e.target.id + " was clicked");
+                        loadNewGraph(e);
+                    }
+                });
+            </script>
+
+            <div class="buttons">
+                <!-- Form tag placed outside button group to keep inline-->
+                <form>
+                    <div class="button-grp">
+                        <button type="button" onclick="createContentChart()" id="button1">Content Words Bubble Chart</button>
+                        <button type="button" onclick="createFunctionChart()" id="button2">Function Words Bubble Chart</button>
+                        <button type="button" onclick="createThemeChart()" id="button3">Words By Theme Bubble Chart</button>        
+                        
+                        <label for="wordnum">Number of words:</label>
+                        <input type="text" id="wordnum" name="wordnum">
+
+                        <label for="wordparts">Display options:</label>
+                        <select name="wordparts" id="wordparts">
+                            <option value="All">All Words</option>
+                            <option value="Noun">Nouns</option>
+                            <option value="Adjective">Adjectives</option>
+                            <option value="Verb">Verbs</option>
+                            <option value="Adverb">Adverbs</option>
+                            <option value="Preposition">Prepositions</option>
+                            <option value="Conjunction">Conjunctions</option>
+                            <option value="Article">Articles</option>
+                            <option value="Pronoun">Pronouns</option>
+                            <option value="Auxiliary Verb">Auxiliary Verbs</option>
+                        </select>
+                        <button type="button" id="button4" onclick="goButton()">Go</button>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="help">
+                <button type="button" onClick="window.open('help_bubbles.html','Packed Bubbles Help','resizable,height=360,width=600'); return false;" id="help_button">Help</button>
+            </div>
+        </div>
+    </body>
+</html>

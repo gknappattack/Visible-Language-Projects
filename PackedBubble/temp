@@ -1,0 +1,64 @@
+var chart = {
+        chart: {
+            type: 'packedbubble',
+            height: '775',
+            width: '1650'
+        },
+        title: {
+            text: 'Content words in the Book of Mormon by part-of-speech'
+        },
+        tooltip: {
+            useHTML: true,
+            pointFormat: '<b>{point.name}</b> appears {point.y} times'
+        },
+        plotOptions: {
+          series: {
+              cursor: 'pointer',
+              events: {
+                  click: function (event) {
+                      if (event.altKey) {
+                          //createContentChart();
+                      }
+                  }
+              }
+          },
+    
+            packedbubble: {
+                useSimulation: false,
+                minSize: '20%',
+                maxSize: '80%',
+                dataLabels: {
+                    enabled: true,
+                    format: format(event),
+                    filter: {
+                        property: 'y',
+                        operator: '>',
+                        value: 1
+                    },
+                    style: {
+                        color: 'black',
+                        textOutline: 'none',
+                        fontWeight: 'normal',
+                        fontSize: '22pt'
+                    }
+                }
+            }
+            
+        },
+        series: getEventData(event)
+      };
+
+    Highcharts.chart('graph-display', chart);
+
+
+
+     var filterArray = cleanData.data.splice(0,3);
+       /*
+       var finalData = {
+           "name": cleanData.name,
+           "data": [filterArray]
+       }*/
+
+       var finalData = {"name": "Love",
+       "data": [{"name": "people", "value": 894},{"name": "land", "value": 698},{"name": "God", "value": 437},{"name": "Lord", "value": 318},{"name": "brethren", "value": 188},{"name": "church", "value": 147},{"name": "Christ", "value": 140},{"name": "Jesus", "value": 121},{"name": "hearts", "value": 108},{"name": "manner", "value": 89}]};
+       
