@@ -1,4 +1,6 @@
-TextChunker
+# Text Chunker
+
+## Overview
 
 This is a simple Python app Dr. Fields wanted me to write that could take in a folder full of text files and return them broken down into "sub-files" based on a user entered number of chunks to break the file into.
 
