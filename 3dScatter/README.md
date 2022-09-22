@@ -1,5 +1,6 @@
-3d Scatter Chart
+# 3d Scatter Chart
 
+## Overview
 Honestly this one is still really rough and incomplete. 
 
 The original mission was to create a 3d scatter plot with multiple sets of data, each identified by a distinct color, that could also draw an ellipsoid around the various data sets. 
@@ -9,7 +10,7 @@ In 2d that is not a hard thing to accomplish at all, but finding a library that 
 For that reason, the pages in this folder don't have any formatting/background to them, just the graph, since I was focused just on making the graph work.
 
 
-FYI:
+## Notes
 
 This is explained more in the javascript files, but there are actually two html files and two javascript files. index.html and scatter.js are based on the Higcharts API for 3d scatter plots (the same API as the packedbubbles/treecharst). While it works alright, it was very limited in options, especially when I was trying to make the ellipsoids happen. Because of this, I went looking for other options, and tried out plotly. I was still unsuccessful with the ellipsoids, but I thought it was overall better for the graphing/customizability. 
 
