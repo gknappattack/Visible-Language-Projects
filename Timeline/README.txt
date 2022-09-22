@@ -1,10 +1,15 @@
-Timeline: 
+# Book of Mormon Timeline
+
+## Overview
 
 This one is about 70~75% complete, mostly lacking in the visual department. A few things make that a little more complicated than it should be, but for the most part this one is in an okay place.
 
 Essentially, the timeline page displays a large set of pictures that Dr. Fields sent me of various speakers in the Book of Mormon. When a picture is clicked, lines that connect that speaker to other speakers in the Book of Mormon are drawn, connecting them all. These lines can be clicked, and a quote/description that is associated with that connection is displayed. Since it is a timeline, there should be dates with the speakers (there is not currently)
  
 The current page is a mess of a solution using CSS to create a 9000+ px div of the 78 pictures that scrolls by dragging the mouse, along with a small sidebar on the right that displays information about the selected picture to the right. The pictures are small, but side bar on the right blows it up.
+
+
+## Functionality 
 
 I was not given any sort of data to base my work off of, so I chose to use CSV as my file type, with a format like the following: 
 
@@ -25,7 +30,8 @@ The code is commented, most of the confusion is will likely come from the drawLi
 
 The other confusing part of the whole set up: In order to dynamically draw and erase these lines, I used SVG and <path> elements to draw Bezier curves between connected pictures. This means that the background on display is an SVG element which makes it a little hard to do much with the background. If you try to add a picture to make the background more interesting/appealing, the z-value of the path elements will need to be edited to ensure that they are now not covered by the picture. If something disappears, it is likely a z-value issue.
 
-TODO:
+## TODO List
+
 - Mainly just visual rehaul. Again the browns and golds are terrible and I just didn't have time to worry about cleaning this up. 
 
 - Time markings inside the timeline. The overall timeline effect with the scrolling and the paths is there, but there is no sort of time markings for the different speakers. It wouldn't need to be like every 100 years, but maybe a year marking at key transition points in the timeline. (part of the reason I didn't do it is because it would require me to sift through the years from the Book of Mormon which was pretty tedious, so this may require some boring work to determine all the dates).
