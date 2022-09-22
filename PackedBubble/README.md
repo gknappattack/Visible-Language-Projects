@@ -1,3 +1,5 @@
+## Overview
+
 The PackedBubble Package actually contains two different kind of graphs in the same package. 
 
 packedbubbles.html is a file for a site that displays bubble charts (charts where the bubbles represent words, with the size determined by the frequency of the word in the Book of Mormon). 
@@ -10,7 +12,7 @@ Both pages feature a help button which explains the way to interact with the pag
 
 In terms of useful information to pass on for maintenance...
 
-SPECS FOR EACH PAGE:
+## Functionality
 
 The specs I was given was honestly very open ended for better or worse. I tried to get a more specific vision down by talking with Dr. Fields, and these are they key points we got down to.
 
@@ -29,7 +31,7 @@ PackedBubble:
 TreeCharts:
 - Drill down functionality. The chart should be split by layers, the first one being content words vs. function words. When one of those two division is clicked, the chart should focus on those and display parts of speech. When a part of speech is selected, then all the words of that part of speech are displayed. When a word is selected, then the word fills the screen. This is already in place with the treecharts.html, but I wrote here for a reminder.
 
-Things to do:
+## TODO List
 - Find a permanent home for the data sets. Right now, the packed bubbles chart is retrieving data from my github since I was not told what would be the final place for it. I'm guessing it would be somewhere on the visible language server, but I did not get to that point, so that will need to be adjusted. 
 
 - Automate the data retrieval and changing of data sets for the treecharts.html page. Right now, it is using a single sample data set that is hard coded into the chart. The PackedBubble code is set up to where as long as it is retrieving data from my github, it can interchange the data sets which are controlled by the sidebar. There are so many solutions for this, and I am totally happy if you find a better one than the janky side bar that is there that relys on having the id match the file name on github. Essentially both the treecharts and packedbubbles needs to be able to handling the interchange of the different data sets for each speaker. I talk about my solution using the file set up on my github in the javascript files, but whichever solution you decide to use is great. 
